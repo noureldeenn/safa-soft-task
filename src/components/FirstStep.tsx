@@ -41,7 +41,6 @@ export default function FirstStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='Full Name'
             name='fullName'
             placeholder='Enter Your full name'
             value={fullName.value}
@@ -56,7 +55,6 @@ export default function FirstStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='Email'
             name='email'
             placeholder='Enter Your Email'
             type='email'
@@ -77,7 +75,6 @@ export default function FirstStep() {
             SelectProps={{
               native: true
             }}
-            label='Country'
             name='country'
             value={country.value}
             onChange={handleChange}
@@ -96,7 +93,6 @@ export default function FirstStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='Phone number'
             name='phone'
             type="number"
             placeholder='i.e: 01156825347'
@@ -117,7 +113,6 @@ export default function FirstStep() {
             margin={margin}
             fullWidth
             name='password'
-            label='Password'
             type={showPassword ? 'text' : 'password'}
             value={password.value}
             onChange={handleChange}
@@ -147,7 +142,6 @@ export default function FirstStep() {
             margin={margin}
             fullWidth
             name='confirmPassword'
-            label='Confirm Password'
             type={showPassword ? 'text' : 'password'}
             value={confirmPassword.value}
             onChange={handleChange}

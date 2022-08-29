@@ -9,7 +9,7 @@ const theme = createTheme()
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <Container component='main' maxWidth='md' sx={{ mb: 4 }}>
+    <Container component='main' maxWidth='xl' sx={{ bgcolor: 'grey.100', py: 6 }}>
         <StepForm />
     </Container>
   </ThemeProvider>

@@ -26,7 +26,6 @@ export default function SecondStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='Company Name'
             name='companyName'
             placeholder='Enter Your Company Name'
             value={companyName.value}
@@ -42,7 +41,6 @@ export default function SecondStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='Address'
             name='address'
             placeholder='Enter Your Address'
             value={address.value}
@@ -58,7 +56,6 @@ export default function SecondStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='Email'
             name='email'
             placeholder='Enter Your Email'
             type='email'
@@ -79,7 +76,6 @@ export default function SecondStep() {
             SelectProps={{
               native: true
             }}
-            label='Country'
             name='country'
             value={country.value}
             onChange={handleChange}
@@ -98,7 +94,6 @@ export default function SecondStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='City'
             name='city'
             select
             SelectProps={{
@@ -122,7 +117,6 @@ export default function SecondStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='Company Phone'
             name='companyPhone'
             type='number'
             placeholder='i.e: 01156825347'
@@ -142,7 +136,6 @@ export default function SecondStep() {
             variant={variant}
             margin={margin}
             fullWidth
-            label='Company Phone'
             name='companyPhone'
             type='number'
             placeholder='i.e: 01156825347'
