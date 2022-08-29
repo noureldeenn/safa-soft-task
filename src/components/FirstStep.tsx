@@ -2,6 +2,7 @@ import React, { useCallback, useContext, useState } from 'react'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import InputAdornment from '@mui/material/InputAdornment'
 import IconButton from '@mui/material/IconButton'
@@ -41,6 +42,7 @@ export default function FirstStep() {
             variant={variant}
             margin={margin}
             fullWidth
+            label='Full Name'
             name='fullName'
             placeholder='Enter Your full name'
             value={fullName.value}
@@ -55,6 +57,7 @@ export default function FirstStep() {
             variant={variant}
             margin={margin}
             fullWidth
+            label='Email'
             name='email'
             placeholder='Enter Your Email'
             type='email'
@@ -75,6 +78,7 @@ export default function FirstStep() {
             SelectProps={{
               native: true
             }}
+            label='Country'
             name='country'
             value={country.value}
             onChange={handleChange}
@@ -93,8 +97,8 @@ export default function FirstStep() {
             variant={variant}
             margin={margin}
             fullWidth
+            label='Phone number'
             name='phone'
-            type="number"
             placeholder='i.e: 01156825347'
             value={phone.value}
             onChange={handleChange}
@@ -102,7 +106,14 @@ export default function FirstStep() {
             helperText={phone.error}
             required={phone.required}
             InputProps={{
-              endAdornment: <InputAdornment position='end'>+ 20</InputAdornment>
+              startAdornment: (
+                <InputAdornment
+                  position='start'
+                  sx={{ borderRight: '1px solid grey', pl: '3px', height: '56px', width: '50px' }}
+                >
+                  <Typography sx={{ height: '100%' }}>+ 20</Typography>
+                </InputAdornment>
+              )
             }}
           />
         </Grid>
@@ -113,6 +124,7 @@ export default function FirstStep() {
             margin={margin}
             fullWidth
             name='password'
+            label='Password'
             type={showPassword ? 'text' : 'password'}
             value={password.value}
             onChange={handleChange}
@@ -142,6 +154,7 @@ export default function FirstStep() {
             margin={margin}
             fullWidth
             name='confirmPassword'
+            label='Confirm Password'
             type={showPassword ? 'text' : 'password'}
             value={confirmPassword.value}
             onChange={handleChange}
@@ -169,7 +182,7 @@ export default function FirstStep() {
       <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Button
           variant='contained'
-          sx={{ mt: 3, ml: 1 }}
+          sx={{ mt: 3, ml: 1, width: 200 }}
           disabled={isError()}
           color='primary'
           onClick={!isError() ? handleNext : () => null}

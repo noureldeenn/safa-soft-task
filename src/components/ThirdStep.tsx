@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useCallback, useContext } from 'react'
-import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
-import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual'
+import Stack from '@mui/material/Stack'
+import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { AppContext } from '../Context'
 
@@ -20,31 +20,34 @@ export default function ThirdStep() {
   console.log(companyLogo.value)
   return (
     <>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Button variant='text' component='label' color='inherit'>
-            <PhotoSizeSelectActualIcon sx={{ fontSize: '30px', color: 'grey' }} /> Upload a file
-            <label
-              htmlFor='companyLogo'
-              style={{ backgroundImage: `url(${companyLogo.value})`, width: '100%', height: '100%' }}
-            />
-            <input
-              id='companyLogo'
-              type='file'
-              value={companyLogo.value}
-              name='companyLogo'
-              onChange={handleChange}
-              hidden
-            />
-          </Button>
-        </Grid>
-      </Grid>
+      <Stack width='100%' justifyContent='center' alignItems='center'>
+        <img src='/placeholderImg.PNG' alt='' />
+        <Typography>Only images with a size lower than 500 KB are allowed</Typography>
 
+        <label
+          htmlFor='companyLogo'
+          style={{ backgroundImage: `url(${companyLogo.value})`, width: '100%', height: '100%' }}
+        />
+        <input
+          id='companyLogo'
+          type='file'
+          value={companyLogo.value}
+          name='companyLogo'
+          onChange={handleChange}
+          // hidden
+        />
+      </Stack>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}>
-        <Button onClick={handleBack} sx={{ mr: 1 }}>
+        <Button variant='contained' color='inherit' onClick={handleBack} sx={{ mr: 1, width: 100 }}>
           Back
         </Button>
-        <Button variant='contained' disabled={isError()} color='primary' onClick={!isError() ? handleNext : () => null}>
+        <Button
+          variant='contained'
+          sx={{ ml: 1, width: 200 }}
+          disabled={isError()}
+          color='primary'
+          onClick={!isError() ? handleNext : () => null}
+        >
           Next
         </Button>
       </Box>

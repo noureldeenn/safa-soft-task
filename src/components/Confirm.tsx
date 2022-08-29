@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import Box from '@mui/material/Box'
-import axios from 'axios'
+import Stack from '@mui/material/Stack'
+// import axios from 'axios'
 import Button from '@mui/material/Button'
 import { AppContext } from '../Context'
 
@@ -26,28 +27,33 @@ export default function Confirm() {
     form.append('user_full_name', formValues?.fullName?.value)
     form.append('user_phone', formValues?.phone?.value)
 
-    const response = await axios({
-      method: 'post',
-      url: 'https://id.safav2.io.safavisa.com/register',
-      data: form,
-      headers: {
-        'Content-Type': `multipart/form-data`
-      }
-    })
+    // const response = await axios({
+    //   method: 'post',
+    //   url: 'https://id.safav2.io.safavisa.com/register',
+    //   data: form,
+    //   headers: {
+    //     'Content-Type': `multipart/form-data`
+    //   }
+    // })
 
-    console.log(response)
+    // console.log(response)
     // Show last component or success message
     handleNext()
   }
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}>
-      <Button sx={{ mr: 1 }} onClick={handleBack}>
-        Back
-      </Button>
-      <Button variant='contained' color='success' onClick={handleSubmit}>
-        Confirm & Continue
-      </Button>
-    </Box>
+    <>
+      <Stack width='100%' justifyContent='center' alignItems='center'>
+        <img src='/emailBackgroundImage.PNG' alt='' />
+      </Stack>
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 3 }}>
+        <Button variant='contained' color='inherit' onClick={handleBack} sx={{ mr: 1, width: 100 }}>
+          Back
+        </Button>
+        <Button variant='contained' sx={{ ml: 1, width: 200 }} color='primary' onClick={handleSubmit}>
+          Confirm
+        </Button>
+      </Box>
+    </>
   )
 }
